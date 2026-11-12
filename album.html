@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的相簿</title>
+    <!-- 引入 W3.CSS 框架 -->
+    <link rel="stylesheet" href="https://w3schools.com">
+    <!-- 引入 Font Awesome 圖示（選用，若導覽列有用到圖示的話） -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        /* 確保地圖與影片在手機上也能自適應比例 */
+        .responsive-iframe-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 比例 */
+            margin-bottom: 20px;
+        }
+        .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+	
+	    <!-- 2-3. 五區塊底色設定 -->
+    <style>
+        header { background-color: #ffcccc; padding: 10px; } /* 頁首底色 */
+        nav    { background-color: #e6f2ff; padding: 10px; } /* 導覽列底色 */
+        aside  { background-color: #ffffcc; float: left; width: 25%; min-height: 300px; } /* 左側邊欄 */
+        main   { background-color: #ffffff; float: left; width: 75%; min-height: 300px; } /* 右主要內容 */
+        footer { background-color: #dddddd; clear: both; padding: 10px; } /* 頁尾底色 */
+    </style>
+		
+</head>
+<body>
+
+    <!-- 2-1 & 3. 導覽列 (請保持與前作業相同，並新增「我的相簿」連結) -->
+    <div class="w3-bar w3-black w3-card">
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">🏠首頁</a>
+        <!-- 其他原有導覽列項目... -->
+		<a href="about.html" class="w3-bar-item w3-button">關於我</a>	
+		<a href="album-N.html" class="w3-bar-item w3-button w3-padding-large w3-grey">💼我的相簿</a>
+    </div>
+
+    <!-- 2-1. 頁首區塊 (請保持與前作業風格/內容相同) -->
+    <header class="w3-container w3-teal w3-center" style="padding:48px 16px">
+        <h1 class="w3-margin w3-jumbo">歡迎來到我的相簿空間</h1>
+        <p class="w3-xlarge">紀錄生活的美好瞬間</p>
+    </header>
+
+    <!-- 2-2. 主要內容區 (採用 W3.CSS 相本網格範本) -->
+    <main class="w3-content w3-container w3-padding-64" style="max-width:1200px">
+        
+          <!-- Google 共享相簿網格區 -->
+        <h2 class="w3-center w3-margin-bottom"><i class="fas fa-images"></i> 我的 Google 共享相簿</h2>
+        <div class="w3-row-padding w3-margin-top">
+            
+            <!-- 相簿 1 -->
+            <!-- 2-3. 使用符合主題的高畫質線上相片（解決找不到 img/album1.jpg 的破圖問題） -->
+            <!-- 2-4. target="_blank" 確保在新索引標籤開啟 Google 相簿 -->
+				<div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <a href="pic1.html" target="_blank">
+					<img src="img/album1.jpg" alt="相簿一封面" style="width:25%" class="w3-hover-opacity">
+					</a>
+                    <div class="w3-container w3-white w3-padding-16">
+                        <h3>生活隨手拍</h3>
+                        <p>點擊上方封面照片，即可在新分頁開啟 Google 相簿觀看更多精彩照片。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 相簿 2 -->
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4" style="border-radius: 8px; overflow: hidden;">
+                     <a href="pic2.html" target="_blank">
+                       <img src="img/album2.jpg" alt="相簿二封面" style="width:25%" class="w3-hover-opacity"> 
+                    </a>
+                    <div class="w3-container w3-white w3-padding-16">
+                        <h3>美味食記</h3>
+                        <p style="color:#666; font-size:0.9rem;">點擊上方封面照片，即可在新分頁開啟 Google 相簿觀看更多精彩照片。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 相簿 3 -->
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4" style="border-radius: 8px; overflow: hidden;">
+                    <a href="pic3.html" target="_blank">
+                     <img src="img/album3.jpg" alt="相簿三封面" style="width:25%" class="w3-hover-opacity">
+                    </a>
+                    <div class="w3-container w3-white w3-padding-16">
+                        <h3>旅遊足跡</h3>
+                        <p style="color:#666; font-size:0.9rem;">點擊上方封面照片，即可在新分頁開啟 Google 相簿觀看更多精彩照片。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 2-5. [水平線] -->
+        <hr class="w3-border-grey" style="margin:40px 0">
+
+			<!-- 多媒體崁入區塊（分為左右兩欄展示） -->
+		<div class="w3-row-padding">
+    
+			<!-- 2-6. 崁入 [我最喜歡的歌曲] YouTube 影片 -->
+             <div class="w3-half w3-margin-bottom">
+                 <h3><i class="fa fa-music"></i> 我最喜歡的歌曲</h3>
+                    <p>這是我平常最喜歡聽的一首歌，旋律非常優美，推薦給你！</p>
+                    <p class="w3-small w3-text-grey">🎵 點擊下方按鈕前往觀看精彩音樂影片</p>
+						<a href="https://youtube.com/watch?v=-v8DxrOVUds" target="_blank" class="w3-button w3-red w3-round">
+						 <i class="fa fa-youtube-play"></i> 在 YouTube 上播放影片		
+						</a>
+			  </div>
+</div>
+           
+        <!-- 2-5. [水平線] -->
+        <hr class="w3-border-grey" style="margin:40px 0">
+
+		   <!-- 2-7. 崁入 [我家附近著名地標] Google 地圖 -->
+            <div class="w3-half w3-margin-bottom">
+                <h3><i class="fa fa-map-marker"></i> 我家附近地標</h3>
+                <p>這是位於我家附近的 Seven-Eleven，交通很方便。</p>
+				    <div class="w3-padding-16 w3-center" style="background: #f1f1f1; border-radius: 8px; border: 1px dashed #ccc;">
+                   <p class="w3-small w3-text-grey">點擊下方"更多選項:前往 Google map </p>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d14610.173821457724!2d120.45618953397474!3d23.72799227716296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x346eb7005f7de9ad%3A0x9127c0381ec4656!2z5ZyL6YGTMeiZjuWwvuS6pOa1gemBkyA2MzLpm7LmnpfnuKPomY7lsL7pjq7mlpflha3oga_ntaHpgZM!3m2!1d23.735806399999998!2d120.4703665!4m5!1s0x346eb166141efb4f%3A0x1bb9ac4cbd89bfe9!2zNy1FTEVWRU4g5LiJ6YeX6ZaA5biCIDYzMumbsuael-e4o-iZjuWwvumOruS4reiIiOmHjDE2M-S5izHomZ8!3m2!1d23.7240246!2d120.4551262!5e0!3m2!1szh-TW!2stw!4v1792985306061!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <i class="fa fa-youtube-play"></i> 前往 Google map 地標
+        </a>
+    </div>
+</div>	
+
+
+
+    </main>
+
+    <!-- 2-1. 頁尾區塊 (請保持與前作業風格/內容相同) -->
+    <footer class="w3-container w3-black w3-center w3-padding-32">
+        <p>Copyright &copy; 2026 你的名字. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

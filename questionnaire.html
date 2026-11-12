@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問卷調查表單</title>
+    <!-- 引入 W3.CSS 框架 -->
+    <link rel="stylesheet" href="https://w3schools.com">
+    <style>
+        body {
+            background-color: #f7f9fa;
+        }
+        .main-container {
+            max-width: 750px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        fieldset {
+            border: 2px solid #009688 !important; /* w3-teal 顏色 */
+            padding: 20px !important;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+            color: #009688;
+            font-size: 1.2em;
+        }
+        .q-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 15px;
+            display: block;
+        }
+        .option-group {
+            margin: 8px 0 15px 15px;
+        }
+        .option-label {
+            margin-right: 15px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- (5)-3 同步調整導覽列：新增問卷表單連結 -->
+<div class="w3-bar w3-black w3-large">
+    <a href="index.html" class="w3-bar-item w3-button">首頁</a>
+    <a href="about.html" class="w3-bar-item w3-button">關於我們</a>
+    <a href="questionnaire.html" class="w3-bar-item w3-button w3-teal">問卷表單</a>
+</div>
+
+<div class="main-container">
+    <div class="w3-container w3-teal w3-round-large w3-card-4 w3-margin-bottom">
+        <h2>課程與服務意見調查問卷</h2>
+    </div>
+
+    <form action="#" method="POST">
+        
+        <!-- (5)-2 將所有表單欄位框起來 -->
+        <fieldset class="w3-round-large w3-card">
+            <legend>&nbsp;問卷內容題目&nbsp;</legend>
+
+            <!-- 1. 是非題：使用 checkbox -->
+            <div class="w3-section">
+                <label class="q-title">1. 是非題：您是否第一次訪問本網站？</label>
+                <div class="option-group">
+                    <input type="checkbox" id="q1" name="q1_first_time" value="yes" class="w3-check">
+                    <label for="q1" class="option-label"> 是的，這是我第一次來。</label>
+                </div>
+            </div>
+
+            <!-- 2. 單選題：使用 radio -->
+            <div class="w3-section">
+                <label class="q-title">2. 單選題：您對本站提供的整體服務滿意度如何？</label>
+                <div class="option-group">
+                    <input type="radio" id="q2_1" name="q2_satisfaction" value="5" class="w3-radio" required>
+                    <label for="q2_1" class="option-label">滿意</label>
+                    <input type="radio" id="q2_2" name="q2_satisfaction" value="3" class="w3-radio">
+                    <label for="q2_2" class="option-label">普通</label>
+                    <input type="radio" id="q2_3" name="q2_satisfaction" value="1" class="w3-radio">
+                    <label_for="q2_3" class="option-label">不滿意</label>
+                </div>
+            </div>
+
+            <!-- 3. 單選題：使用 select -->
+            <div class="w3-section">
+                <label for="q3" class="q-title">3. 單選題：您的主要職業類別是？</label>
+                <div class="option-group">
+                    <select id="q3" name="q3_job" class="w3-select w3-border w3-round" required>
+                        <option value="" disabled selected>請選擇您的職業</option>
+                        <option value="student">學生</option>
+                        <option value="engineer">工程師</option>
+                        <option value="business">商業/服務業</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 4. 複選題：使用 checkbox -->
+            <div class="w3-section">
+                <label class="q-title">4. 複選題：您平常喜愛的休閒活動有哪些？（可多選）</label>
+                <div class="option-group">
+                    <input type="checkbox" id="q4_1" name="q4_hobby" value="sports" class="w3-check">
+                    <label for="q4_1" class="option-label">戶外運動</label>
+                    <input type="checkbox" id="q4_2" name="q4_hobby" value="movie" class="w3-check">
+                    <label for="q4_2" class="option-label">看電影/影集</label>
+                    <input type="checkbox" id="q4_3" name="q4_hobby" value="reading" class="w3-check">
+                    <label for="q4_3" class="option-label">閱讀書籍</label>
+                    <input type="checkbox" id="q4_4" name="q4_hobby" value="gaming" class="w3-check">
+                    <label for="q4_4" class="option-label">電玩遊戲</label>
+                </div>
+            </div>
+
+            <!-- 5. 複選題：使用 select (加上 multiple 屬性) -->
+            <div class="w3-section">
+                <label for="q5" class="q-title">5. 複選題：您希望未來增加哪些網頁技術課程？（可按住 Ctrl 鍵多選）</label>
+                <div class="option-group">
+                    <select id="q5" name="q5_skills[]" class="w3-select w3-border w3-round" multiple size="4" required>
+                        <option value="html5">HTML5 / CSS3 網頁設計</option>
+                        <option value="javascript">JavaScript 互動前端</option>
+                        <option value="w3css">W3.CSS / Bootstrap 框架</option>
+                        <option value="backend">Node.js 後端開發</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 6. 填充題：使用 一般文字輸入方塊 text -->
+            <div class="w3-section">
+                <label for="q6" class="q-title">6. 填充題：請填寫您畢業或就讀的學校名稱：</label>
+                <div class="option-group">
+                    <input type="text" id="q6" name="q6_school" class="w3-input w3-border w3-round" placeholder="例如：臺灣大學" required>
+                </div>
+            </div>
+
+            <!-- 7. 填充題：限定使用 數字 number -->
+            <div class="w3-section">
+                <label for="q7" class="q-title">7. 填充題：請問您的年齡是幾歲？（請輸入數字）</label>
+                <div class="option-group">
+                    <input type="number" id="q7" name="q7_age" class="w3-input w3-border w3-round" min="1" max="150" placeholder="例如：20" required>
+                </div>
+            </div>
+
+            <!-- 8. 填充題：限定使用 日期 date -->
+            <div class="w3-section">
+                <label for="q8" class="q-title">8. 填充題：請選擇您填寫本問卷的今天的日期：</label>
+                <div class="option-group">
+                    <input type="date" id="q8" name="q8_date" class="w3-input w3-border w3-round" required>
+                </div>
+            </div>
+
+            <!-- 9. 問答題：高度至少三橫列，使用 textarea (設定 rows="4") -->
+            <div class="w3-section">
+                <label for="q9" class="q-title">9. 問答題：請留下您對本站的其他寶貴意見或具體建議：</label>
+                <div class="option-group">
+                    <textarea id="q9" name="q9_feedback" rows="4" class="w3-input w3-border w3-round" placeholder="請在此輸入您的想法（高度至少三列）..." required></textarea>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <!-- (5)-1 要有 [送出]、[重設] 按鈕：使用 button 並套用 W3.CSS 圓角樣式 -->
+        <div class="w3-row-padding w3-margin-top" style="padding:0;">
+            <div class="w3-half w3-margin-bottom">
+                <button type="submit" class="w3-button w3-teal w3-block w3-round-large w3-large w3-ripple"><b>[送出] 提交問卷</b></button>
+            </div>
+            <div class="w3-half">
+                <button type="reset" class="w3-button w3-red w3-block w3-round-large w3-large w3-ripple"><b>[重設] 清除重填</b></button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
